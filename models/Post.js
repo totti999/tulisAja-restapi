@@ -10,5 +10,15 @@ const postSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    created
+    created_date:{
+        type: Date,
+            default: Date.now
+    },
+    modified_date:{
+        type: Date,
+            default: null
+    }
+
 })
+
+module.exports = mongoose.model('Post', postSchema)

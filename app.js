@@ -2,7 +2,20 @@ const express = require('express')
 const app = express()
 require('dotenv/config')
 const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
+const cors = require('cors')
+require('dotenv/config')
 
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+app.use(bodyParser.json());
+app.use(cors())
+
+
+const postRoutes = require("./routes/post")
+app.use('/post', postRoutes)
 app.get('/', (req, res) => {
     res.send('Hello World! 2')
 })
