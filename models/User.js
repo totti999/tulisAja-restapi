@@ -1,15 +1,16 @@
 const mongoose = require("mongoose");
-
-const postSchema = mongoose.Schema(
+const userSchema = mongoose.Schema(
   {
-    content: {
+    username: {
       type: String,
       required: true,
+      max: 45,
     },
-    user_id: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+    password: {
+      type: String,
       required: true,
+      min: 6,
+      max: 255,
     },
     created_date: {
       type: Date,
@@ -19,14 +20,10 @@ const postSchema = mongoose.Schema(
       type: Date,
       default: null,
     },
-    username: {
-      type: String,
-      required: true,
-    },
   },
   {
     versionKey: false,
   }
 );
 
-module.exports = mongoose.model("Post", postSchema, "post");
+module.exports = mongoose.model("User", userSchema, "user");
