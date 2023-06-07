@@ -18,11 +18,7 @@ const postSchema = mongoose.Schema(
     modified_date: {
       type: Date,
       default: null,
-    },
-    username: {
-      type: String,
-      required: true,
-    },
+    }
   },
   {
     versionKey: false,

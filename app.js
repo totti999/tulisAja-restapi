@@ -14,8 +14,13 @@ app.use(bodyParser.json());
 app.use(cors())
 
 
+
+const authRoutes = require("./routes/auth")
 const postRoutes = require("./routes/post")
+app.use('/auth', authRoutes)
 app.use('/post', postRoutes)
+
+
 app.get('/', (req, res) => {
     res.send('Hello World! 2')
 })

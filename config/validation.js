@@ -1,8 +1,8 @@
 const Joi = require('joi')
 const registerValidation = (data)=> {
     const schema = Joi.object({
-        username:Joi.String().required(),
-        password: Joi.String().min(6).required()
+        username:Joi.string().required(),
+        password: Joi.string().min(6).required()
 
     })
     return schema.validate(data)
@@ -10,8 +10,8 @@ const registerValidation = (data)=> {
 
 const loginValidation = (data)=> {
     const schema = Joi.object({
-        username:Joi.String().required(),
-        password: Joi.String().min(6).required()
+        username: Joi.string().required(),
+        password: Joi.string().min(6).required()
 
     })
     return schema.validate(data)
