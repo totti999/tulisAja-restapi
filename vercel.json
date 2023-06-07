@@ -1,6 +1,6 @@
 {
     "version":2,
-    "name":"tulis-aja-restapi",
+    "name":"tulis-aja-restapi-9c3w",
     "builds":[
         {"src":"app.js",
         "use":"@vercel/node"}
